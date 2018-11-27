@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import LoginScreen from './components/LoginScreen';
+import ChooseOption from './components/ChooseOption';
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,7 +16,8 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <LoginScreen/>
+      {/* <LoginScreen/>*/}
+      <ChooseOption/>
       </View>
     );
   }
