@@ -16,11 +16,11 @@ export default class ChooseOption extends React.Component {
         <Text style={{backgroundColor:'#eee'}}>Choose Option</Text>
         <Text>Select an option</Text>
         <Button
-  onPress={()=>{}}
-  title="Answer Doubts"
-  color="#841584"
-  accessibilityLabel="Click to Answer"
-/>
+          onPress={()=>{}}
+          title="Answer Doubts"
+          color="#841584"
+          accessibilityLabel="Click to Answer"
+        />
       </View>
     );
   }

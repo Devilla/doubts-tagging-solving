@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
-
+import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight } from 'react-native';
+import ActionButton from 'react-native-action-button';
 export default class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +9,10 @@ export default class LoginScreen extends React.Component {
       password:'Password'
    };
   }
-
+handleLoginPress = () =>  {
+//Navigation Logic
+this.props.navigation.navigate('ChooseOption');
+}
   render() {
     return (
       <View style={styles.container}>
@@ -27,6 +30,9 @@ export default class LoginScreen extends React.Component {
       onChangeText={(password) => this.setState({password})}
       value={this.state.password}
     />
+    <TouchableHighlight on onPress={this.handleLoginPress}>
+    <Text>Login</Text>
+    </TouchableHighlight>
       </View>
     );
   }
