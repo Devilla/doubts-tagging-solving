@@ -8,15 +8,18 @@ export default class ChooseOption extends React.Component {
    };
   }
 
+handleAnswerPress = () => {
+  this.props.navigation.navigate('DoubtsList');
 
+}
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{backgroundColor:'#eee'}}>Choose Option</Text>
-        <Text>Select an option</Text>
+        <Text style={{backgroundColor:'#eee', fontSize: 20, marginTop: -600}}>Choose Option</Text>
+        <Text style={{marginTop: 50}}>Select an option</Text>
         <Button
-          onPress={()=>{}}
+          onPress={this.handleAnswerPress}
           title="Answer Doubts"
           color="#841584"
           accessibilityLabel="Click to Answer"

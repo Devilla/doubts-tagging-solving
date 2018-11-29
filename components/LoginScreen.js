@@ -5,8 +5,8 @@ export default class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: '',
-      password:''
+      id: 'Admin',
+      password:'Admin'
    };
   }
 handleLoginPress = () =>  {
@@ -25,13 +25,13 @@ handleLoginPress = () =>  {
       source={{uri: 'https://www.neetprep.com/assets/img/logo.png'}}
       />
       <TextInput
-      style={{height: 40, width: 170, borderColor: 'gray', borderWidth: 1}}
+      style={{height: 40, width: 170, borderColor: '#eee', borderWidth: 1}}
       onChangeText={(id) => this.setState({id})}
       value={this.state.id}
       placeholder="Login"
       />
       <TextInput
-      style={{height: 40, width: 170, borderColor: 'gray', borderWidth: 1}}
+      style={{height: 40, width: 170, borderColor: '#eee', borderWidth: 1}}
       onChangeText={(password) => this.setState({password})}
       value={this.state.password}
       placeholder="Password"
