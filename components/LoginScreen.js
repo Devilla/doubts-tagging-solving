@@ -10,7 +10,7 @@ export default class LoginScreen extends React.Component {
    };
   }
 handleLoginPress = () =>  {
-  if(this.state.id === 'admin' && this.state.id === 'admin')
+  if(this.state.id === 'admin' && this.state.id === 'admin' || this.state.id === 'Admin' && this.state.id === 'Admin')
     this.props.navigation.navigate('ChooseOption');
   else {
     Alert.alert('Invalid Credentials.');
