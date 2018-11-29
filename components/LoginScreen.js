@@ -1,16 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight, Alert } from 'react-native';
 import ActionButton from 'react-native-action-button';
 export default class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 'Login',
-      password:'Password'
+      id: '',
+      password:''
    };
   }
 handleLoginPress = () =>  {
-this.props.navigation.navigate('VoiceTest');
+  if(this.state.id === 'admin' && this.state.id === 'admin')
+    this.props.navigation.navigate('ChooseOption');
+  else {
+    Alert.alert('Invalid Credentials.');
+  }
 }
 
   render() {
@@ -24,14 +28,17 @@ this.props.navigation.navigate('VoiceTest');
       style={{height: 40, width: 170, borderColor: 'gray', borderWidth: 1}}
       onChangeText={(id) => this.setState({id})}
       value={this.state.id}
+      placeholder="Login"
       />
       <TextInput
       style={{height: 40, width: 170, borderColor: 'gray', borderWidth: 1}}
       onChangeText={(password) => this.setState({password})}
       value={this.state.password}
+      placeholder="Password"
       />
     <TouchableHighlight on onPress={this.handleLoginPress}>
-    <Text>Login</Text>
+    <Text style={{backgroundColor:'#097fff', color: '#fff', margin: 10}}>Sign in</Text>
+
     </TouchableHighlight>
     </View>
     );

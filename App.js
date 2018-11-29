@@ -2,15 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import LoginScreen from './components/LoginScreen';
 import ChooseOption from './components/ChooseOption';
-import VoiceTest from './components/VoiceTest';
-
+import VoiceInput from './components/VoiceInput';
 
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 const AppNavigator = createStackNavigator({
   Home: {screen: LoginScreen},
   ChooseOption: {screen: ChooseOption},
-  VoiceTest: {screen: VoiceTest}
+  VoiceInput: {screen: VoiceInput}
 });
 
 const AppContainer = createAppContainer(AppNavigator);

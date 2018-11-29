@@ -4,7 +4,7 @@ export default class DoubtsList {
   constructor(){
     super();
     this.state = {
-
+      
     }
   }
   render() {

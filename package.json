@@ -14,7 +14,8 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-action-button": "^2.8.5",
     "react-native-voice": "^0.2.6",
-    "react-navigation": "^3.0.2"
+    "react-navigation": "^3.0.2",
+    "react-voice-input": "0.0.4"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
