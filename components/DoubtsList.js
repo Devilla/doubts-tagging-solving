@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableHighlight} from 'react-native';
+import {View, Text, TouchableHighlight, Button} from 'react-native';
 
 export default class DoubtsList extends Component {
 
@@ -15,10 +15,17 @@ export default class DoubtsList extends Component {
         <View>
           <Text style={{fontSize: 50,textAlign: 'center'}}>List of doubts</Text>
             <View>
-            <Text>q1 : {questions}</Text>
-            <TouchableHighlight onPress={()=>{}}>
-            <Text style={{backgroundColor:'blue', color: '#fff', margin: 180}}>Answer</Text>
-            </TouchableHighlight>
+            {questions.map((prop, key) => {
+                return (
+                  <View>
+                  <Text  key={key}>{prop}</Text>
+                  <TouchableHighlight onPress={()=>{}}>
+                  <Text style={{backgroundColor:'blue', color: '#fff', margin: 0}}>Answer</Text>
+                  </TouchableHighlight>
+                  </View>
+                );
+             })}
+
             </View>
         </View>
     );
