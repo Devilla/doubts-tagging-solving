@@ -11,18 +11,18 @@ export default class DoubtsList extends Component {
   }
 
 handleAnswerPress = () => {
-  console.log("Answer Pessed!!");
+  console.log("Answer Pressed!!");
 }
 
   render() {
     const {questions} = this.state;
     return (
         <View>
-          <Text style={{fontSize: 50,textAlign: 'center'}}>List of doubts</Text>
+          <Text style={{fontSize: 50,textAlign: 'center'}}>Answer Doubts</Text>
             <View>
-            {questions.map((prop, key) => {
+            {questions.reverse().map((prop, key) => {
                 return (
-                  <View>
+                  <View key={key}>
                   <Text  style={{margin:50}} key={key}>question: {key+1} {prop}</Text>
                   <Button onPress={this.handleAnswerPress} title="Answer" ></Button>
                   </View>
