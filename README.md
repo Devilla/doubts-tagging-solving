@@ -5,4 +5,4 @@ An mobile app made with React-Native to answer students doubts by professionals.
  npm install
 
 ## To run app
-npm start (`sudo expo start` for Ubuntu with admin privileges and `run cmd with administrator for windows`)
+npm start (`sudo expo start` for `Ubuntu` with admin privileges and `run cmd with administrator for windows`)
