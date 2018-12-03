@@ -9,6 +9,11 @@ export default class DoubtsList extends Component {
       questions: ['Sir how to solve Q.58', 'Why work done is maximum in case of isobaric process?']
     }
   }
+
+handleAnswerPress = () => {
+  console.log("Answer Pessed!!");
+}
+
   render() {
     const {questions} = this.state;
     return (
@@ -18,10 +23,8 @@ export default class DoubtsList extends Component {
             {questions.map((prop, key) => {
                 return (
                   <View>
-                  <Text  key={key}>{prop}</Text>
-                  <TouchableHighlight onPress={()=>{}}>
-                  <Text style={{backgroundColor:'blue', color: '#fff', margin: 0}}>Answer</Text>
-                  </TouchableHighlight>
+                  <Text  style={{margin:50}} key={key}>question: {key+1} {prop}</Text>
+                  <Button onPress={this.handleAnswerPress} title="Answer" ></Button>
                   </View>
                 );
              })}
