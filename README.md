@@ -1,5 +1,5 @@
 # doubts-tagging-solving
-An mobile app made with React-Native to answer students doubts by professionals.
+A mobile app made with React-Native to answer students doubts by professionals.
 
 ## To install dependencies
  npm install
