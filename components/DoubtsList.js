@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, ScrollView, Text, TouchableHighlight, Button} from 'react-native';
-import { getQuestions } from '../api';
+// import { getQuestions } from '../api';
 export default class DoubtsList extends Component {
 
   constructor(){
@@ -11,12 +11,14 @@ export default class DoubtsList extends Component {
   }
 
   componentDidMount(){
+    // require('../db.json').questions.push('one more questions');
     const questions = require('../db.json').questions;
     this.setState({questions : questions});
   }
 
 handleAnswerPress = () => {
   console.log("Answer Pressed!!");
+  this.props.navigation.navigate('AnswerDoubt');
 }
 
   render() {

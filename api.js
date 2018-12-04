@@ -8,7 +8,7 @@ const api = manifest.packagerOpts.dev
 const url = `https://${api}/questions`;
 
 export function getQuestions() {
-  console.log(questions,'/////////////////////////////////////////' );
+  console.log(questions);
   // return fetch(url)
   // .then(res => res.json());
 }
