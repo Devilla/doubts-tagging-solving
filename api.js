@@ -5,10 +5,10 @@ const api = manifest.packagerOpts.dev
   ? manifest.debuggerHost.split(':').shift().concat(':3000')
   : 'productionUrl.com';
 
-const url = `http://${api}/questions`;
+const url = `https://${api}/questions`;
 
 export function getQuestions() {
-  return fetch(url)
-  .then(res => response.json());
-
+  console.log(questions,'/////////////////////////////////////////' );
+  // return fetch(url)
+  // .then(res => res.json());
 }

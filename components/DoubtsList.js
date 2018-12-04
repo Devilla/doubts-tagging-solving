@@ -6,22 +6,17 @@ export default class DoubtsList extends Component {
   constructor(){
     super();
     this.state = {
-      questions: ['Sir how to solve Q.58', 'Why work done is maximum in case of isobaric process?']
+      questions: ['Sir how to solve Q.58']
     }
   }
 
   componentDidMount(){
-
-    getQuestions().then(questions => this.setState({ questions }));
-    console.log('>>>>>>>>>>>>>>>>>',this.state.questions);
+    const questions = require('../db.json').questions;
+    this.setState({questions : questions});
   }
 
 handleAnswerPress = () => {
   console.log("Answer Pressed!!");
-  getQuestions().then(questions => this.setState({ questions }));
-  console.log('>>>>>>>>>>>>>>>>>',this.state.questions);
-  
-
 }
 
   render() {
@@ -32,12 +27,14 @@ handleAnswerPress = () => {
           <Text style={{fontSize: 50,textAlign: 'center'}}>Answer Doubts</Text>
           <Text style={{fontSize: 15, margin:15, textAlign: 'center'}}>High Priority</Text>
             <View>
-            {questions.reverse().map((prop, key) => {
+            {questions.map((prop, key) => {
                 return (
-                  <View key={key}>
+                  key<2
+                    && <View key={key}>
                   <Text  style={{margin:50}} key={key}>Question: {key+1} {prop}</Text>
                   <Button onPress={this.handleAnswerPress} title="Answer" ></Button>
                   </View>
+
                 );
              })}
             </View>
