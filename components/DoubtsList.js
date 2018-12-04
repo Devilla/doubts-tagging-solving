@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, ScrollView, Text, TouchableHighlight, Button} from 'react-native';
-
+import { getQuestions } from '../api';
 export default class DoubtsList extends Component {
 
   constructor(){
@@ -10,8 +10,18 @@ export default class DoubtsList extends Component {
     }
   }
 
+  componentDidMount(){
+
+    getQuestions().then(questions => this.setState({ questions }));
+    console.log('>>>>>>>>>>>>>>>>>',this.state.questions);
+  }
+
 handleAnswerPress = () => {
   console.log("Answer Pressed!!");
+  getQuestions().then(questions => this.setState({ questions }));
+  console.log('>>>>>>>>>>>>>>>>>',this.state.questions);
+  
+
 }
 
   render() {

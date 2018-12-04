@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight, Alert, Button } from 'react-native';
 import ActionButton from 'react-native-action-button';
 export default class LoginScreen extends React.Component {
   constructor(props) {
@@ -36,10 +36,8 @@ handleLoginPress = () =>  {
       value={this.state.password}
       placeholder="Password"
       />
-    <TouchableHighlight on onPress={this.handleLoginPress}>
-    <Text style={{backgroundColor:'#097fff', color: '#fff', margin: 10}}>Sign in</Text>
+    <Button onPress={this.handleLoginPress} title='Signin' style={{color: '#fff', width:500}}></Button>
 
-    </TouchableHighlight>
     </View>
     );
   }
