@@ -20,8 +20,7 @@ handleAnswerPress = () => {
         <Text style={{marginTop: 50}}>Select an option</Text>
         <Button
           onPress={this.handleAnswerPress}
-          title="Answer Doubts"
-          color="#841584"
+          title="Answer Doubts screen"
           accessibilityLabel="Click to Answer"
         />
       </View>

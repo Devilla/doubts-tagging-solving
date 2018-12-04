@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView, View, Text} from 'react-native';
+import {ScrollView, View, Text, Button} from 'react-native';
 
 export default class AnswerDoubt extends Component{
   constructor(){
@@ -8,6 +8,12 @@ export default class AnswerDoubt extends Component{
 
     }
   }
+
+handleDoubtPress  = () => {
+  this.props.navigation.navigate('AnswerMode');
+  console.log(this.props.navigation,'=================');
+}
+
   render(){
     return (
       <ScrollView>
@@ -18,6 +24,7 @@ export default class AnswerDoubt extends Component{
       <Text style={{fontSize:15}}>Topic                       Conservation of Momentum</Text>
       <Text style={{fontSize:15}}>Type of doubt               None</Text>
       <Text style={{fontSize:15}}>Level of difficulty         None</Text>
+      <Button onPress={this.handleDoubtPress} title='Answer'></Button>
       </ScrollView>
 
     );

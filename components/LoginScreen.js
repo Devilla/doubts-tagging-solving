@@ -36,7 +36,7 @@ handleLoginPress = () =>  {
       value={this.state.password}
       placeholder="Password"
       />
-    <Button onPress={this.handleLoginPress} title='Signin' style={{color: '#fff', width:500}}></Button>
+    <Button onPress={this.handleLoginPress} title="LOGIN screen"></Button>
 
     </View>
     );
