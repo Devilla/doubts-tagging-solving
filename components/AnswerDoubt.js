@@ -6,17 +6,28 @@ export default class AnswerDoubt extends Component{
     super(props);
     console.log(props.navigation.state.params);
     this.state = {
-         }
+          question,
+          subject,
+          chapter,
+          topic,
+          type,
+          difficulty,
+          answers
+          } = this.props.navigation.state.params;
+  }
+
+  componentWillMount(){
+       this.state.answers.push('Answer : Go to solution 58.');
+        console.log(this.props.navigation,'=================');
   }
 
 handleDoubtPress  = () => {
   this.props.navigation.navigate('AnswerMode');
-  // console.log(this.props.navigation,'=================');
-
 }
 
+
   render(){
-    const {question, subject, chapter, topic, type, difficulty} = this.props.navigation.state.params;
+    const {question, subject, chapter, topic, type, difficulty, answers} = this.state;
     return (
       <ScrollView>
       <Text style={{fontSize:20}}>{question} ?</Text>
@@ -27,6 +38,7 @@ handleDoubtPress  = () => {
       <Text style={{fontSize:15}}>Type of doubt               {type}</Text>
       <Text style={{fontSize:15}}>Level of difficulty         {difficulty}</Text>
       <Button onPress={this.handleDoubtPress} title='Answer'></Button>
+      <Text style={{fontSize:20}}>{answers} </Text>
       </ScrollView>
 
     );

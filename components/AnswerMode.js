@@ -12,8 +12,10 @@ export default class AnswerMode extends Component {
     console.log(this.state.text);
   }
 
-handleSubmitPress = () => {
-  console.log(this.state.text);
+handleSubmitPress = (text) => {
+  console.log(text);
+  this.props.navigation.navigate('AnswerDoubt',text);
+
 }
 
   render(){
@@ -25,7 +27,7 @@ handleSubmitPress = () => {
         onChangeText={(text) => this.setState({text})}
         value={this.state.text}
       />
-      <Button onPress={this.handleSubmitPress} title='Submit button'></Button>
+      <Button onPress={()=>{this.handleSubmitPress(this.state.text)}} title='Submit button'></Button>
       </ScrollView>
     );
   }
