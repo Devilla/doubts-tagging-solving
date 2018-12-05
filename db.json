@@ -1,8 +1,31 @@
 {
   "questions":
      [
-       "Sir how to solve Q.58",
-        "Why work done is maximum in case of isobaric process?" ,
-         "What is iso thermal process?"
-      ]
+       {
+         "question":"Sir how to solve Q.58",
+         "subject" : "Physics",
+         "chapter" : "Work, Energy, Power",
+         "topic" : "Conservation of Momentum",
+         "type" : "None",
+         "difficulty" : "None"
+       },
+
+       {
+         "question": "Why work done is maximum in case of isobaric process" ,
+         "subject" : "Physics",
+         "chapter" : "Work, Energy, Power",
+         "topic" : "Conservation of Momentum",
+         "type" : "None",
+         "difficulty" : "None"
+       },
+
+       {
+         "question": "What is iso thermal process" ,
+         "subject" : "Physics",
+         "chapter" : "Work, Energy, Power",
+         "topic" : "Conservation of Momentum",
+         "type" : "None",
+         "difficulty" : "None"
+       }
+     ]
 }

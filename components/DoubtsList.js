@@ -16,9 +16,9 @@ export default class DoubtsList extends Component {
     this.setState({questions : questions});
   }
 
-handleAnswerPress = () => {
-  console.log("Answer Pressed!!");
-  this.props.navigation.navigate('AnswerDoubt');
+handleAnswerPress = (prop) => {
+  // console.log("Answer Pressed!!",prop);
+  this.props.navigation.navigate('AnswerDoubt',prop);
 }
 
   render() {
@@ -33,8 +33,8 @@ handleAnswerPress = () => {
                 return (
                   key<2
                     && <View key={key}>
-                  <Text  style={{margin:50}} key={key}>Question: {key+1} {prop}</Text>
-                  <Button onPress={this.handleAnswerPress} title="Answer" ></Button>
+                  <Text  style={{margin:50}} key={key}>Question: {key+1} {prop.question} ?</Text>
+                  <Button onPress={() => this.handleAnswerPress(prop)} title="Answer" ></Button>
                   </View>
 
                 );
@@ -45,8 +45,8 @@ handleAnswerPress = () => {
               {questions.reverse().map((prop, key) => {
                   return (
                     <View key={key}>
-                    <Text  style={{margin:50}} key={key}>Question: {key+1} {prop}</Text>
-                    <Button onPress={this.handleAnswerPress} title="Answer" ></Button>
+                    <Text  style={{margin:50}} key={key}>Question: {key+1} {prop.question} ?</Text>
+                    <Button onPress={() => this.handleAnswerPress(prop)} title="Answer" ></Button>
                     </View>
                   );
                })}
