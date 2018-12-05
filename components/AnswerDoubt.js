@@ -38,15 +38,19 @@ handleShowAnswerPress = () => {
       <Text style={{fontSize:15}}>Topic                       {topic}</Text>
       <Text style={{fontSize:15}}>Type of doubt               {type}</Text>
       <Text style={{fontSize:15}}>Level of difficulty         {difficulty}</Text>
+      <View style={{marginTop:100}}>
       <Button onPress={this.handleDoubtPress} title='Answer'></Button>
+      </View>
+      <View style={{marginTop:100}}>
       <Button onPress={this.handleShowAnswerPress} title='Show Answers'></Button>
-
-            <View>
-            {
-            answers.map((prop, key) => {
-            return (<Text  style={{margin:50}} key={key}>Answer: {key+1} {prop} </Text>);
-          })}
-            </View>
+      </View>
+      <View>
+        {
+        answers.map((prop, key) => {
+        return (<Text  style={{margin:50}} key={key}>Answer: {key+1} {prop} </Text>);
+        })
+        }
+      </View>
 
 
       </ScrollView>
