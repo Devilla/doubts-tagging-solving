@@ -12,22 +12,40 @@ export default class AnswerDoubt extends Component{
           topic,
           type,
           difficulty,
-          answers
+          answers,
+          text
           } = this.props.navigation.state.params;
   }
 
   componentWillMount(){
-       this.state.answers.push('Answer : Go to solution 58.');
-        console.log(this.props.navigation,'=================');
+       this.state.answers.push(this.state.text);
+        console.log(this.props.navigation,'==========WILL=======');
+  }
+  componentDidMount(){
+       // this.state.answers.push('Answer : Go to solution 58.');
+        console.log(this.props.navigation,'====DID=============');
+  }
+  componentWillReceiveProps(){
+    console.log(this.props.navigation,'====componentWillReceiveProps=============');
+
   }
 
 handleDoubtPress  = () => {
   this.props.navigation.navigate('AnswerMode');
+  this.state.answers.push(this.state.text);
+  console.log(this.props.navigation,'=======FUNC==========');
+}
+
+handleShowAnswerPress = () => {
+  this.setState({text:this.props.navigation.state.params.text});
+   this.state.answers.push(this.state.text);
+  console.log(this.props.navigation,'=======FUNC2==========');
+
 }
 
 
   render(){
-    const {question, subject, chapter, topic, type, difficulty, answers} = this.state;
+    const {question, subject, chapter, topic, type, difficulty, answers, text} = this.state;
     return (
       <ScrollView>
       <Text style={{fontSize:20}}>{question} ?</Text>
@@ -38,7 +56,8 @@ handleDoubtPress  = () => {
       <Text style={{fontSize:15}}>Type of doubt               {type}</Text>
       <Text style={{fontSize:15}}>Level of difficulty         {difficulty}</Text>
       <Button onPress={this.handleDoubtPress} title='Answer'></Button>
-      <Text style={{fontSize:20}}>{answers} </Text>
+      <Button onPress={this.handleShowAnswerPress} title='Show Answers'></Button>
+      <Text style={{fontSize:20}}>{text} </Text>
       </ScrollView>
 
     );
